@@ -147,3 +147,19 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+
+# =========
+
+.home/
+scripts/
+.claude/
+CLAUDE.md
+
+# Agent project
+dist/
+.env.local
+.anthropic/
+agent-logs/
+*.transcript.jsonl
+!.env.example
