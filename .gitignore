@@ -153,13 +153,18 @@ vite.config.ts.timestamp-*
 
 .home/
 scripts/
-.claude/
-CLAUDE.md
+.claude/*
+!.claude/agents/
+!.claude/skills/
+!.claude/settings.json
 
 # Agent project
 dist/
 .env.local
 .anthropic/
 agent-logs/
+logs/
+data/
+reports/
 *.transcript.jsonl
 !.env.example
