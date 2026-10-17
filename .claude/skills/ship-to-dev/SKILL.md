@@ -17,7 +17,7 @@ description: Commit, push, open a PR to dev, and merge it, following this repo's
    - `## Test plan`: the commands run and their results
    - `🤖 Generated with [Claude Code](https://claude.com/claude-code)`
    - Add `--draft` for blocked tasks.
-5. **Merge** (not for drafts): `gh pr merge <n> --merge`. Then `git checkout dev && git pull --ff-only gh dev`.
+5. **Merge** (not for drafts): `gh pr merge <n> --merge`, as its own Bash command. Don't chain it after PR creation: the guard hook looks up the PR's base before the command runs, so it blocks a PR that doesn't exist yet. Then `git checkout dev && git pull --ff-only gh dev`.
 6. If the merge conflicts: `git checkout <branch> && git merge gh/dev`, resolve the conflicts, rerun the checks, push (no force), and retry the merge.
 
 **Never** use `--base main`, push to `main`, or merge PRs whose base is `main`.
